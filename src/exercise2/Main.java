@@ -3,19 +3,6 @@ package exercise2;
 import java.util.ArrayList;
 import java.util.List;
 
-class Browser{
-	Browser(){
-		
-	}
-	
-	
-	void whoAmI() {
-		
-		System.out.println("I am a browser");
-	}
-	
-	
-}
 
 interface MultipleAccountContainers{
 	
@@ -161,6 +148,8 @@ class Firefox extends Browser implements MultipleAccountContainers{
 
 
 public class Main {
+	//public static int totalTabs;
+
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -182,8 +171,11 @@ public class Main {
 		
 		System.out.println("The version of Chrome is :"+chrome.versionNumber);
 		
-		int noOfChromeTabs=0;
-		for(int index=0;index<8;index++) {
+		 int totalTabs=allBrowsers.length;
+		
+		browser.setValue(totalTabs);
+		int noOfChromeTabs=browser.getValue();
+		for(int index=0;index<totalTabs;index++) {
 			if(allBrowsers[index] instanceof GoogleChrome) {
 				noOfChromeTabs+=1;
 			}
